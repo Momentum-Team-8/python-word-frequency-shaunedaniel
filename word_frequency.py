@@ -1,13 +1,25 @@
+
+import string
 STOP_WORDS = [
-    'a', 'an', 'and', 'are', 'as', 'at', 'be', 'by', 'for', 'from', 'has', 'he',
-    'i', 'in', 'is', 'it', 'its', 'of', 'on', 'that', 'the', 'to', 'were',
+    'a', 'an', 'and', 'are', 'as', 'at', 'be', 'by', 'for', 'from', 'has',
+    'he', 'i', 'in', 'is', 'it', 'its', 'of', 'on', 'that', 'the', 'to', 'were',
     'will', 'with'
 ]
+# open file - read file and lowercase the data in the file - split off the data - sort data in ABC order
+# remove the punctuations - remove stop words - count words - display on terminal.
 
 
 def print_word_freq(file):
-    """Read in `file` and print out the frequency of words in that file."""
-    pass
+
+    file = open(file)
+    text = file.read().lower()
+    words = text.split()
+    output = sorted(
+        [word.strip(string.punctuation) for word in words])
+    print(output)
+
+
+print(print_word_freq)
 
 
 if __name__ == "__main__":
